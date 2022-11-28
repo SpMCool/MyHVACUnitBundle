@@ -1,0 +1,53 @@
+2017-12-04 v1.1 Made some minor changes to save the tokens in data auth structure in multi-threading context
+
+2017-12-11 v1.1.1 Made some minor changes in generateEvent() method.
+
+2018-02-03 V1.1.2 Made some UI minor changes for up and down arrows' labels.
+
+2018-03-30 V1.1.2 Made some minor changes to exception handling in MyFlairServiceMgr
+
+2018-04-13 MyHVACUnit (v1.1.2) corrected supportedThermostatModes 
+
+2018-04-14 MyFlairServiceMgr (v1.1.3) - added count of devices in selection pages and new icons. 
+
+2018-06-17 MyFlairVent v1.1.2 - minor tweaks to work around the fact that ventReadings's level is wrong (level=1) when close
+
+2018-07-04 MyPuck device (v1.1.3) - substituted puck's temperature for room's current temperature as it's more accurate for display
+
+2018-08-22 MyPuck device v1.1.5, MyHVACUnit v1.1.3, MyFlairTstat v1.1.2, MyFlairVent v1.1.3 - added metadata attributes for basic attributes display in new Samsung app. 
+
+2018-08-25 MyFLairServiceMgr v1.3.3, MyPuck device v1.1.6, MyHVACUnit v1.1.4, MyFlairTstat v1.1.3, MyFlairVent v1.1.4 - added some purgeChildDevice logic to remove devices from SM when users
+forcefully delete their devices and removed contacts book reference. Need to update all code to make it work.
+
+2018-09-29 MyFLairServiceMgr(v1.1.5) Minor change in purgeChildDevice()
+
+2018-11-18 MyPuckDevice (v1.1.6), MyHVACUnit (v1.1.5) corrected levelUp() and levelDown() for Farenheit users and enforced .5 increment for Celsius users
+
+2019-02-20 MyFlairServiceMgr (v1.1.6) do not use runIn for creating objects as the ST platform has too many timeouts.
+
+2019-04-10 MyPuckDevice (v1.1.7), MyFlairVent(v.1.1.6), MyHVACUnit (v1.1.9), MyFlairTstat(v1.1.4) Implemented some workarounds for state variable size limit & MAX_INDICE logic in getXXXStates & getXXXReadings
+
+2019-06-13 MyPuckDevice (v1.1.8) & MyFlairVent(v.1.1.7): split the dataEvents in refresh_XXX routines for faster refreshes of core attributes
+
+2019-12-23 MyPuckDevice (v1.2) Added thermostatSetpoint capability 
+
+2019-12-26 MyPuckDevice (v1.2.1) Added setThermostatSetpoint command
+
+2020-01-13  MyPuckDevice (v1.2.2),MyFlairVent(v.1.1.8),MyHVACUnit(v1.1.9b), MyFlairTstat (v1.1.5) Corrected icons path following some security changes in iOS/Android Classic mobile app.
+
+2020-07-31 MyPuckDevice (v1.2.4) Added  ocfDeviceType in metadata to avoid lock look & feel (SmartThings UI issue).
+
+2020-10-07 MyHVacUnit (v2.1) corrected supported thermostat & fan modes according to constraints field (ST has changed its value).
+
+===================================================================================================================================================================
+2020-11-08 , MyPuckDevice(v2.0),MyFlairServiceMgr(v2.0) added custom setThermostatSetpoint capability and changed presentation in new app
+
+To take advantage of the new Puck's presentation, you may need to refresh the new Samsung connect app with the following actions:
+
+(1) Go to the IDE (under the right shard), copy and paste the new code for MyPuckDevice (v2.0) & MyFlairServiceMgr (v2.0), save & publish
+(2) Under the IDE, go under the list of devices, click on your puck device(s), and change the device type to any other device type & save. Then, revert the action and save again.
+(3) You may need to kill the running Samsung connect's mobile app (especially under IoS). Regardless,it may take few minutes before the new presention and values appear in the new app.
+(4) If the above steps are not enough, you may need to clear the Samsung Connect Mobile's app & cache data.
+===================================================================================================================================================================
+2020-12-1 MyPuckDevice (v2.1),MyFlairVent(v1.3),MyHvacUnit(v2.2),MyFlairTstat(v1.2) made some changes to faster initialization, better performance for vents.
+2020-12-7 MyFlairServiceMgr(v2.2) made some minor changes to avoid creating duplicates when renaming the devices' name
